@@ -5,19 +5,15 @@ from email.mime.text import MIMEText
 
 
 
-user = "whmrtm@gmail.com"
-passwd = "whm9316rtm"
-
 
 class email:
         def __init__(self):
-                self._from = "whmrtm@gmail.com"
-                self._passwd = "whm9316rtm"
+                self._from = ""
+                self._passwd = ""
                 self._to = ""
                 self._subject = ""
                 self._content = ""
         def send(self):
-                self.get_info()
                 body = MIMEText(self._content, 'html')
                 body['From'] = self._from
                 body['To'] = self._to
@@ -46,7 +42,19 @@ class email:
                 print("Content: ")
                 self._content = input()
 
+        def set_from(self, user):
+                self._from = user
+        def set_to(self, to):
+                self._to = to
+        def set_passwd(self, content):
+                self._passwd = passwd
+        def set_subject(self, subject):
+                self._subject = subjecy
+        def set_content(self, content):
+                self._content = content
 
-my_email = email()
-my_email.send()
+        def set_default(self):
+                self._from = "whmrtm@gmail.com"
+                self._passwd = "whm9316rtm"
+        
 
