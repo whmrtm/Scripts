@@ -1,10 +1,12 @@
 #!/bin/python3
 
+
+import re
 import urllib.request
 import sys
 
+
 response = urllib.request.urlopen('http://amazon.ca/')
-html = response.read()
+my_html = response.read()
 
-print(html)
-
+print(my_html)
