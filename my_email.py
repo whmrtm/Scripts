@@ -49,7 +49,7 @@ class email:
         def set_passwd(self, content):
                 self._passwd = passwd
         def set_subject(self, subject):
-                self._subject = subjecy
+                self._subject = subject
         def set_content(self, content):
                 self._content = content
 
