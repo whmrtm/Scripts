@@ -22,12 +22,12 @@ torrent_html = response.text
 # Grep the necessary information (torrent list)
 tree = html.fromstring(torrent_html)
 torrentname = tree.findall(".//table[@class='torrentname']/")
-torrent_name_list = []
+torrent_name_list = "" 
 for table in torrentname:
         for element in table.iter("a"):
                 if 'title' in element.attrib:
                         name = element.attrib['title']
-                        torrent_name_list.append(name)
+                        torrent_name_list = torrent_name_list + name + '\n'
 
 print(torrent_name_list)
 
@@ -37,6 +37,6 @@ my_email = email()
 my_email.set_default()
 my_email.set_to("whmowen@gmail.com")
 my_email.set_subject("Fetch torrent lists")
-my_email.set_content(str(torrent_name_list))
+my_email.set_content(torrent_name_list)
 
-# my_email.send()
+my_email.send()
