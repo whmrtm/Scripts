@@ -8,8 +8,8 @@ import pdfkit
 hydro_login = "https://www.wnhwebpresentment.com/app/capricorn?para=index"
 session = requests.session()
 placeholder = {
-                'accessCode':'whmrtm@gmail.com',
-                'password':'WHM9316rtm',
+                'accessCode':'xxxx',
+                'password':'xxxx',
                 'rememberMyAccountNumber':'Y'
                 }
 response = session.post(hydro_login, 
