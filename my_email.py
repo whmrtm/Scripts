@@ -58,6 +58,6 @@ class email:
         def set_default(self):
                 self._from = "whmrtm@gmail.com"
                 self._to = "whmrtm@gmail.com"
-                self._passwd = "whm9316rtm"
+                self._passwd = "xxxx"
         
 
