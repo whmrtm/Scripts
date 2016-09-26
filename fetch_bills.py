@@ -3,6 +3,7 @@ from lxml import html
 from my_email import email
 import datetime
 import requests
+import pdfkit
 
 hydro_login = "https://www.wnhwebpresentment.com/app/capricorn?para=index"
 session = requests.session()
@@ -19,13 +20,18 @@ today = datetime.date.today()
 month = "%02d" % today.month
 to_day = "%02d" % today.day
 
-daily_consumption_url = "https://www.wnhwebpresentment.com/app/capricorn?para=smartMeterConsum"
-daily_response = session.get(daily_consumption_url, headers = dict(referer = daily_consumption_url))
-daily_html = daily_response.text
+
 
 price_url = "https://www.wnhwebpresentment.com/app/capricorn?para=usageComparison&inquiryType=hydro&fromYear=2016&fromMonth="+ month +"&fromDay=01&toYear=2016&toMonth="+ month +"&toDay=" + to_day
 price_response = session.get(price_url, headers = dict(referer = price_url))
 price_html = price_response.text
 
+print(price_html)
+#daily_consumption_url = "https://www.wnhwebpresentment.com/app/capricorn?para=smartMeterConsum"
+#daily_response = session.get(daily_consumption_url, headers = dict(referer = daily_consumption_url))
+#daily_html = daily_response.text
 
-print(daily_html + price_html)
+my_email = email()
+my_email.set_default()
+my_email.set_result("Hydro Price", price_html)
+# my_email.send()

@@ -52,9 +52,12 @@ class email:
                 self._subject = subject
         def set_content(self, content):
                 self._content = content
-
+        def set_result(self, subject, content):
+                self.set_subject(subject)
+                self.set_content(content)
         def set_default(self):
                 self._from = "whmrtm@gmail.com"
+                self._to = "whmrtm@gmail.com"
                 self._passwd = "whm9316rtm"
         
 
