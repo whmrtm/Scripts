@@ -9,8 +9,8 @@ from lxml import html
 login_url = "https://pt.hit.edu.cn/takelogin.php"
 session_requests = requests.session()
 payload = {
-            "username":"whmrtn@126.com",
-            "password":"whm9316rtm"
+            "username":"xxxx",
+            "password":"xxxx"
                 }
 result = session_requests.post(login_url, data = payload, headers = dict(referer = login_url))
 
